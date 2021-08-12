@@ -14,7 +14,7 @@ add_node_indice(network, qca_data, bipartite = NULL, indice = NULL, ...)
 \item{bipartite}{If the network is bipartite, select the level the cases and the
 outcome are on. If they are on the first level (sometimes referred as the
 actor level) of a bipartite network, choose 'b1', if they are on the second level
-(sometimes referred as the event level), choose 'b2'.}
+(sometimes referred as the event level), choose 'b2'. Otherwise omit it.}
 
 \item{indice}{The sna node-level indice you want to add to the qca-dataset as a variable
 and its parameters (e.g. degree, cmode = "indegree"). For details, see the sna package.}

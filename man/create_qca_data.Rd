@@ -4,19 +4,22 @@
 \alias{create_qca_data}
 \title{create_qca_data}
 \usage{
-create_qca_data(network, attr_case, attr_outcome, bipartite = NULL)
+create_qca_data(network, attr_case, attr_outcome = NULL, bipartite = NULL)
 }
 \arguments{
 \item{network}{An object of class 'network'.}
 
-\item{attr_case}{The node-level attributes that are the cases (usually vertex.names).}
+\item{attr_case}{The node-level attributes that are the cases (usually 'vertex.names').}
 
-\item{attr_outcome}{The node_level attributes that are defined as the outcome.}
+\item{attr_outcome}{This argument is optional. If the outcome is a node_level attribute, it can be defined as the outcome already.
+A according column named 'Output' will be added to the dataset. If an other output, like an node-level indice or another network
+configuration shall be the outcome, just add them with one of the other functions of this package (or manually) and define them
+as the outcome in the QCA package. Otherwise omit it.}
 
 \item{bipartite}{If the network is bipartite, select the level the cases and the
 outcome are on. If they are on the first level (sometimes referred as the
 actor level) of a bipartite network, choose 'b1', if they are on the second level
-(sometimes referred as the event level), choose 'b2'.}
+(sometimes referred as the event level), choose 'b2'. Otherwise omit it.}
 }
 \value{
 Creates a data set (tibble) with two columns ('Cases' and the corresponding 'Outcome').
@@ -28,10 +31,13 @@ Function to create a basic dataset of cases and outcome.
 Creating this data set and defining cases and outcome is always the first step.
 Other variables or network-indices can be added in subsequent steps.
 Please note that the tibble format is used due to convenience. After adding the desired variables,
-the qcadata-tibble can be finalized/converted with the finalize_qcadata-function!
+the qcadata-tibble can be finalized/converted with the finalize_qca_data-function!
 }
 \examples{
 qca_data <- create_qca_data(network, attr_cases = "vertex.names", attr_outcome = "Type", bipartite = "b2")
 
 
+}
+\references{
+Dusa, Adrian (2019) QCA with R. A Comprehensive Resource. Springer International Publishing.
 }
