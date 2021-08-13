@@ -18,8 +18,8 @@ as the outcome in the QCA package. Otherwise omit it.}
 
 \item{bipartite}{If the network is bipartite, select the level the cases and the
 outcome are on. If they are on the first level (sometimes referred as the
-actor level) of a bipartite network, choose 'b1', if they are on the second level
-(sometimes referred as the event level), choose 'b2'. Otherwise omit it.}
+actor level) of a bipartite network, choose 'bipartite = "b1"', if they are on the second level
+(sometimes referred as the event level), choose 'bipartite = "b2"'. Otherwise omit it.}
 }
 \value{
 Creates a data set (tibble) with two columns ('Cases' and the corresponding 'Outcome').

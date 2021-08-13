@@ -4,12 +4,13 @@
 #'
 #' @param network An object of class 'network'.
 #' @param qca_data The qca-dataset you want to extend.
+#' @param indice The sna node-level indice you want to add to the qca-dataset as a variable
+#' and its parameters (e.g. degree, cmode = "indegree"). For details, see the sna package.
 #' @param bipartite If the network is bipartite, select the level the cases and the
 #' outcome are on. If they are on the first level (sometimes referred as the
 #' actor level) of a bipartite network, choose 'b1', if they are on the second level
 #' (sometimes referred as the event level), choose 'b2'. Otherwise omit it.
-#' @param indice The sna node-level indice you want to add to the qca-dataset as a variable
-#' and its parameters (e.g. degree, cmode = "indegree"). For details, see the sna package.
+#'
 #'
 #' @details With the add_node_indice function you can add the specific node-level metrics
 #' for each of the cases to the qca-dataset. The 'indice' parameter is basically the command
@@ -29,7 +30,7 @@
 #' @return The preexisting qca-dataset enhanced with a new column consisting of the
 #' specified sna node-level indice.
 #'
-#' @examples qca_data <- add_node_indice(network, qca_data, "b2", indice = degree, cmode = "indegree")
+#' @examples qca_data <- add_node_indice(network, qca_data, indice = degree, cmode = "indegree", "b2")
 #'
 #' @references Carter T. Butts (2020). sna: Tools for Social Network Analysis. R package
 #' version 2.6. \url{https://CRAN.R-project.org/package=sna}
@@ -38,19 +39,24 @@
 
 add_node_indice <- function(network,
                             qca_data,
-                            bipartite = NULL,
                             indice = NULL,
+                            bipartite = NULL,
                             ...) {
-  if (is.null(bipartite)) {
+  if (!is.bipartite(network)) { #&& missing(bipartite)) {
     if (is.null(indice)) {
       stop("Please provide a sna node-level indice")
     } else {
       colname <- stringr::str_to_title(as.character(substitute(indice)))
       indice <- indice(network, ...)
-      qca_data %>% tibble::add_column(!!colname := indice, .before = "Outcome")
+      qca_data %>% add_column(!!colname := indice, .after = "Cases")
     }
   }
-  else if (bipartite == "b2") {
+  else if(network::is.bipartite(network) && missing(bipartite)){
+    stop(
+      "The network is bipartite, please select a level with 'b1' or 'b2'"
+    )
+  }
+  else if (is.bipartite(network) && bipartite == "b2") {
     if (is.null(indice)) {
       stop("Please provide a sna node-level indice")
     } else {
@@ -62,24 +68,25 @@ add_node_indice <- function(network,
         stringr::str_to_title(as.character(substitute(indice)))
       indice <- indice(network, ...)
       indice <- indice[b]
-      qca_data %>% tibble::add_column(!!colname := indice, .before = "Outcome")
+      qca_data %>% add_column(!!colname := indice, .after = "Cases")
     }
   }
-  else if (bipartite == "b1") {
+  else if (is.bipartite(network) && bipartite == "b1") {
     if (is.null(indice)) {
       stop("Please provide a sna node-level indice")
     } else {
       for (i in 1:length(network::network.vertex.names(network))) {
         a <- 1:i
       }
-      a <- a[1:network::get.network.attribute(network, "bipartite")]
+      a <-
+        a[1:network::get.network.attribute(network, "bipartite")]
       colname <-
         stringr::str_to_title(as.character(substitute(indice)))
       indice <- indice(network, ...)
       indice <- indice[a]
-      qca_data %>% tibble::add_column(!!colname := indice, .before = "Outcome")
+      qca_data %>% add_column(!!colname := indice, .after = "Cases")
     }
-  } else {
-    print("No valid network-level selected! If the network is bipartite, select 'b1' or 'b2', otherwise leave empty")
   }
+  else {
+    stop("The network is bipatite, but no valid level selected. Please select a level with 'b1' or 'b2'")}
 }

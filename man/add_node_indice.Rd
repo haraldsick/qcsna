@@ -4,20 +4,20 @@
 \alias{add_node_indice}
 \title{add_node_indice}
 \usage{
-add_node_indice(network, qca_data, bipartite = NULL, indice = NULL, ...)
+add_node_indice(network, qca_data, indice = NULL, bipartite = NULL, ...)
 }
 \arguments{
 \item{network}{An object of class 'network'.}
 
 \item{qca_data}{The qca-dataset you want to extend.}
 
+\item{indice}{The sna node-level indice you want to add to the qca-dataset as a variable
+and its parameters (e.g. degree, cmode = "indegree"). For details, see the sna package.}
+
 \item{bipartite}{If the network is bipartite, select the level the cases and the
 outcome are on. If they are on the first level (sometimes referred as the
 actor level) of a bipartite network, choose 'b1', if they are on the second level
 (sometimes referred as the event level), choose 'b2'. Otherwise omit it.}
-
-\item{indice}{The sna node-level indice you want to add to the qca-dataset as a variable
-and its parameters (e.g. degree, cmode = "indegree"). For details, see the sna package.}
 }
 \value{
 The preexisting qca-dataset enhanced with a new column consisting of the
@@ -37,7 +37,7 @@ reference manual of the sna package or the help file for the specific functions
 (e.g. \code{\link[sna]{degree}}).
 }
 \examples{
-qca_data <- add_node_indice(network, qca_data, "b2", indice = degree, cmode = "indegree")
+qca_data <- add_node_indice(network, qca_data, indice = degree, cmode = "indegree", "b2")
 
 }
 \references{
