@@ -1,13 +1,23 @@
 #' @title add_attr_uniqueness
 #'
 #' @param network An object of class 'network'.
+#'
 #' @param qca_data The qca-dataset you want to extend.
-#' @param attr The node-level attribute that you would like to calculate an uniqueness-
-#' score. Note that this function works only with node-attributes of type 'character'!
+#'
+#' @param attr The node-level attribute for that you would like to calculate an uniqueness-score.
+#' Note that this function works only with node-attributes of type 'character'!
+#'
 #' @param bipartite If the network is bipartite, select the level the cases and the
 #' outcome are on. If they are on the first level (sometimes referred as the
 #' actor level) of a bipartite network, choose 'b1', if they are on the second level
 #' (sometimes referred as the event level), choose 'b2'. Otherwise omit it.
+#'
+#' @return The preexisting qca-dataset enhanced with a new column consisting of the
+#' uniqueness scores for each node-level attribute of the selected cases.
+#'
+#' @details Sometimes it might be interesting to know, if an attribute of a case is rather unique (or very common)
+#' and whether this uniqueness might be a necessary and/or sufficient condition for the outcome.
+#' You can add a simple uniqueness-metric for a selected node-level attribute of your cases with this function.
 #'
 #' @importFrom dplyr "%>%"
 #' @importFrom dplyr right_join
