@@ -16,8 +16,7 @@
 #' @importFrom network is.bipartite
 #' @importFrom tibble add_column
 #'
-#' @example
-#'
+#' @examples qca_data <- add_attr_uniqueness(network, qca_data, "Type", bipartite = "b2")
 
 add_attr_uniqueness <- function(network,
                                 qca_data,
