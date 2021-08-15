@@ -25,6 +25,13 @@
 #' @importFrom stringr str_to_title
 #' @importFrom network get.vertex.attribute
 #' @importFrom network get.network.attribute
+#' @importFrom network is.bipartite
+#' @importFrom sna betweenness
+#' @importFrom sna closeness
+#' @importFrom sna degree
+#' @importFrom sna stresscent
+#' @importFrom sna graphcent
+#' @importFrom sna evcent
 #' @importFrom tibble add_column
 #'
 #' @return The preexisting qca-dataset enhanced with a new column consisting of the
@@ -42,13 +49,13 @@ add_node_indice <- function(network,
                             indice = NULL,
                             bipartite = NULL,
                             ...) {
-  if (!is.bipartite(network)) { #&& missing(bipartite)) {
+  if (!network::is.bipartite(network)) { #&& missing(bipartite)) {
     if (is.null(indice)) {
       stop("Please provide a sna node-level indice")
     } else {
       colname <- stringr::str_to_title(as.character(substitute(indice)))
       indice <- indice(network, ...)
-      qca_data %>% add_column(!!colname := indice, .after = "Cases")
+      qca_data %>% tibble::add_column(!!colname := indice, .after = "Cases")
     }
   }
   else if(network::is.bipartite(network) && missing(bipartite)){
@@ -56,7 +63,7 @@ add_node_indice <- function(network,
       "The network is bipartite, please select a level with 'b1' or 'b2'"
     )
   }
-  else if (is.bipartite(network) && bipartite == "b2") {
+  else if (network::is.bipartite(network) && bipartite == "b2") {
     if (is.null(indice)) {
       stop("Please provide a sna node-level indice")
     } else {
@@ -68,10 +75,10 @@ add_node_indice <- function(network,
         stringr::str_to_title(as.character(substitute(indice)))
       indice <- indice(network, ...)
       indice <- indice[b]
-      qca_data %>% add_column(!!colname := indice, .after = "Cases")
+      qca_data %>% tibble::add_column(!!colname := indice, .after = "Cases")
     }
   }
-  else if (is.bipartite(network) && bipartite == "b1") {
+  else if (network::is.bipartite(network) && bipartite == "b1") {
     if (is.null(indice)) {
       stop("Please provide a sna node-level indice")
     } else {
@@ -84,7 +91,7 @@ add_node_indice <- function(network,
         stringr::str_to_title(as.character(substitute(indice)))
       indice <- indice(network, ...)
       indice <- indice[a]
-      qca_data %>% add_column(!!colname := indice, .after = "Cases")
+      qca_data %>% tibble::add_column(!!colname := indice, .after = "Cases")
     }
   }
   else {
