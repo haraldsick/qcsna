@@ -25,6 +25,7 @@
 #'
 #' @importFrom network get.vertex.attribute
 #' @importFrom network get.network.attribute
+#' @importFrom network is.bipartite
 #' @importFrom tibble tibble
 #'
 #' @references Dusa, Adrian (2019) QCA with R. A Comprehensive Resource. Springer International Publishing.
