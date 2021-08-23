@@ -1,11 +1,11 @@
 #' @title add_node_indice
 #'
-#' @description Adds a sna node-level indice to the qca data-set
+#' @description Adds a SNA node-level indice to the QCA data-set
 #'
 #' @param network An object of class 'network'.
-#' @param qca_data The qca-dataset you want to extend.
-#' @param indice The sna node-level indice you want to add to the qca-dataset as a variable
-#' and its parameters (e.g. degree, cmode = "indegree"). For details, see the sna package.
+#' @param qca_data The QCA-dataset you want to extend.
+#' @param indice The SNA node-level indice you want to add to the QCA-dataset as a variable
+#' and its parameters (e.g. degree, cmode = "indegree"). For details, see the SNA package.
 #' @param bipartite If the network is bipartite, select the level the cases and the
 #' outcome are on. If they are on the first level (sometimes referred as the
 #' actor level) of a bipartite network, choose 'b1', if they are on the second level
@@ -13,12 +13,12 @@
 #'
 #'
 #' @details With the add_node_indice function you can add the specific node-level metrics
-#' for each of the cases to the qca-dataset. The 'indice' parameter is basically the command
-#' for the sna package to calculate the indice you like to add.
+#' for each of the cases to the QCA-dataset. The 'indice' parameter is basically the command
+#' for the SNA package to calculate the indice you like to add.
 #'
 #' Right now, it should be compatible with betweenness, closeness, degree, stresscent,
 #' graphcent, and evcent. For the specific commands and more options, please refer to the
-#' reference manual of the sna package or the help file for the specific functions
+#' reference manual of the SNA-package or the help file for the specific functions
 #' (e.g. \code{\link[sna]{degree}}).
 #'
 #' @importFrom dplyr "%>%"
@@ -26,6 +26,7 @@
 #' @importFrom network get.vertex.attribute
 #' @importFrom network get.network.attribute
 #' @importFrom network is.bipartite
+#' @importFrom network network.vertex.names
 #' @importFrom sna betweenness
 #' @importFrom sna closeness
 #' @importFrom sna degree
@@ -39,8 +40,13 @@
 #'
 #' @examples qca_data <- add_node_indice(network, qca_data, indice = degree, cmode = "indegree", "b2")
 #'
-#' @references Carter T. Butts (2020). sna: Tools for Social Network Analysis. R package
-#' version 2.6. \url{https://CRAN.R-project.org/package=sna}
+#' @references
+#'
+#' Butts, Carter T. (2008). network: a Package for Managing Relational Data in R. Journal of Statistical Software, 24(2).
+#' \url{https://www.jstatsoft.org/v24/i02/paper}.
+#'
+#' Butts, Carter T. (2020). sna: Tools for Social Network Analysis. R package
+#' version 2.6. \url{https://CRAN.R-project.org/package=sna}.
 #'
 #' @export
 

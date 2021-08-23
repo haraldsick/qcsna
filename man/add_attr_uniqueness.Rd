@@ -9,7 +9,7 @@ add_attr_uniqueness(network, qca_data, attr = NULL, bipartite = NULL)
 \arguments{
 \item{network}{An object of class 'network'.}
 
-\item{qca_data}{The qca-dataset you want to extend.}
+\item{qca_data}{The QCA-dataset you want to extend.}
 
 \item{attr}{The node-level attribute for that you would like to calculate an uniqueness-score.
 Note that this function works only with node-attributes of type 'character'!}
@@ -20,7 +20,7 @@ actor level) of a bipartite network, choose 'b1', if they are on the second leve
 (sometimes referred as the event level), choose 'b2'. Otherwise omit it.}
 }
 \value{
-The preexisting qca-dataset enhanced with a new column consisting of the
+The preexisting QCA-dataset enhanced with a new column consisting of the
 uniqueness scores for each node-level attribute of the selected cases.
 }
 \description{
@@ -33,4 +33,8 @@ You can add a simple uniqueness-metric for a selected node-level attribute of yo
 }
 \examples{
 qca_data <- add_attr_uniqueness(network, qca_data, "Type", bipartite = "b2")
+}
+\references{
+Butts, Carter T. (2008). network: a Package for Managing Relational Data in R. Journal of Statistical Software, 24(2).
+\url{https://www.jstatsoft.org/v24/i02/paper}.
 }

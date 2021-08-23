@@ -2,7 +2,7 @@
 #'
 #' @param network An object of class 'network'.
 #'
-#' @param qca_data The qca-dataset you want to extend.
+#' @param qca_data The QCA-dataset you want to extend.
 #'
 #' @param attr The node-level attribute for that you would like to calculate an uniqueness-score.
 #' Note that this function works only with node-attributes of type 'character'!
@@ -12,7 +12,7 @@
 #' actor level) of a bipartite network, choose 'b1', if they are on the second level
 #' (sometimes referred as the event level), choose 'b2'. Otherwise omit it.
 #'
-#' @return The preexisting qca-dataset enhanced with a new column consisting of the
+#' @return The preexisting QCA-dataset enhanced with a new column consisting of the
 #' uniqueness scores for each node-level attribute of the selected cases.
 #'
 #' @details Sometimes it might be interesting to know, if an attribute of a case is rather unique (or very common)
@@ -23,8 +23,13 @@
 #' @importFrom dplyr right_join
 #' @importFrom network get.vertex.attribute
 #' @importFrom network get.network.attribute
+#' @importFrom network network.vertex.names
 #' @importFrom network is.bipartite
 #' @importFrom tibble add_column
+#'
+#' @references Butts, Carter T. (2008). network: a Package for Managing Relational Data in R. Journal of Statistical Software, 24(2).
+#' \url{https://www.jstatsoft.org/v24/i02/paper}.
+#'
 #'
 #' @examples qca_data <- add_attr_uniqueness(network, qca_data, "Type", bipartite = "b2")
 

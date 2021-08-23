@@ -31,7 +31,7 @@ Function to create a basic dataset of cases and outcome.
 Creating this data set and defining cases and outcome is always the first step.
 Other variables or network-indices can be added in subsequent steps.
 Please note that the tibble format is used due to convenience. After adding the desired variables,
-the qcadata-tibble can be finalized/converted with the finalize_qca_data-function!
+the QCA-data-tibble can be finalized/converted with the finalize_qca_data-function!
 }
 \examples{
 qca_data <- create_qca_data(network, attr_cases = "vertex.names", attr_outcome = "Type", bipartite = "b2")
@@ -39,5 +39,5 @@ qca_data <- create_qca_data(network, attr_cases = "vertex.names", attr_outcome =
 
 }
 \references{
-Dusa, Adrian (2019) QCA with R. A Comprehensive Resource. Springer International Publishing.
+Dusa, Adrian (2019). QCA with R. A Comprehensive Resource. Springer International Publishing.
 }
