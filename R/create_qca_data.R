@@ -20,12 +20,13 @@
 #' Please note that the tibble format is used due to convenience. After adding the desired variables,
 #' the QCA-data-tibble can be finalized/converted with the finalize_qca_data-function!
 #'
-#' @examples qca_data <- create_qca_data(network, attr_cases = "vertex.names", attr_outcome = "Type", bipartite = "b2")
+#' @examples \dontrun{qca_data <- create_qca_data(network, attr_cases = "vertex.names", attr_outcome = "Type", bipartite = "b2")}
 #'
 #'
 #' @importFrom network get.vertex.attribute
 #' @importFrom network get.network.attribute
 #' @importFrom network is.bipartite
+#' @importFrom rlang :=
 #' @importFrom tibble tibble
 #'
 #' @references Dusa, Adrian (2019). QCA with R. A Comprehensive Resource. Springer International Publishing.

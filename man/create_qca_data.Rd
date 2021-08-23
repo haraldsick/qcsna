@@ -34,7 +34,7 @@ Please note that the tibble format is used due to convenience. After adding the 
 the QCA-data-tibble can be finalized/converted with the finalize_qca_data-function!
 }
 \examples{
-qca_data <- create_qca_data(network, attr_cases = "vertex.names", attr_outcome = "Type", bipartite = "b2")
+\dontrun{qca_data <- create_qca_data(network, attr_cases = "vertex.names", attr_outcome = "Type", bipartite = "b2")}
 
 
 }

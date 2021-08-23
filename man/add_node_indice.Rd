@@ -18,6 +18,10 @@ and its parameters (e.g. degree, cmode = "indegree"). For details, see the SNA p
 outcome are on. If they are on the first level (sometimes referred as the
 actor level) of a bipartite network, choose 'b1', if they are on the second level
 (sometimes referred as the event level), choose 'b2'. Otherwise omit it.}
+
+\item{...}{Additional parameters for the SNA node-level indice, like e.g. 'cmode = "indegree"', if you would
+like to add only the indegree-counts. Please take a peek at the SNA package for further guidance and possible
+options for the node-level indices.}
 }
 \value{
 The preexisting qca-dataset enhanced with a new column consisting of the
@@ -37,7 +41,7 @@ reference manual of the SNA-package or the help file for the specific functions
 (e.g. \code{\link[sna]{degree}}).
 }
 \examples{
-qca_data <- add_node_indice(network, qca_data, indice = degree, cmode = "indegree", "b2")
+\dontrun{qca_data <- add_node_indice(network, qca_data, indice = degree, cmode = "indegree", "b2")}
 
 }
 \references{

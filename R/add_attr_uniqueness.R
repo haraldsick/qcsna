@@ -25,13 +25,15 @@
 #' @importFrom network get.network.attribute
 #' @importFrom network network.vertex.names
 #' @importFrom network is.bipartite
+#' @importFrom rlang :=
 #' @importFrom tibble add_column
 #'
 #' @references Butts, Carter T. (2008). network: a Package for Managing Relational Data in R. Journal of Statistical Software, 24(2).
 #' \url{https://www.jstatsoft.org/v24/i02/paper}.
 #'
+#' @examples \dontrun{qca_data <- add_attr_uniqueness(network, qca_data, attr = "Type", bipartite = "b2")}
 #'
-#' @examples qca_data <- add_attr_uniqueness(network, qca_data, "Type", bipartite = "b2")
+#' @export
 
 add_attr_uniqueness <- function(network,
                                 qca_data,

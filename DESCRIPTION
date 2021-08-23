@@ -5,11 +5,11 @@ Version: 0.1.0
 Author: person("Harald", "Sick", email = "sickharald@posteo.de", role = c("cre", "aut"))
 Maintainer: Harald Sick <sickharald@posteo.de>
 Description: The qcsna package is a tool that helps you to analyze a network through qualitative comparative analysis. If you would like to know, for example, which network-based conditions (like e.g. node-level indices or node connections) are necessary and/or sufficient for a specific node attribute, this package helps you to build a bridge between descriptive social network analysis and QCA.
-License: What license is it under?
+License: GPL-3
 URL: https://github.com/haraldsick/qcsna
 BugReports: https://github.com/haraldsick/qcsna/issues
 Depends: R (>= 3.5.0)
-Imports: dplyr (>= 1.0.6), network (>= 1.16.1), sna (>= 2.6), stringr (>= 1.4.0), tibble (>= 3.1.2)
+Imports: dplyr (>= 1.0.6), network (>= 1.16.1), sna (>= 2.6), stringr (>= 1.4.0), rlang (>= 0.4.11), tibble (>= 3.1.2)
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1

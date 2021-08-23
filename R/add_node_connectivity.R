@@ -27,11 +27,12 @@
 #' @importFrom network is.bipartite
 #' @importFrom sna kcycle.census
 #' @importFrom sna kpath.census
+#' @importFrom rlang :=
 #' @importFrom tibble add_column
 #' @importFrom tibble tibble
 #' @importFrom tibble as_tibble
 #'
-#' @examples qca_data <- add_node_connectivity(qca_data, network, count = "Fourcycles", "b2")
+#' @examples \dontrun{qca_data <- add_node_connectivity(qca_data, network, count = "Fourcycles", "b2")}
 #'
 #' @references
 #'
@@ -96,13 +97,13 @@ add_node_connectivity <- function(network,
       stop("Please select a valid count! Right now, 'Fourcycles' and 'Threepaths' are possible")
     } else
       if (count == "Fourcycles") {
-        a <- 1:(network::get.network.attribute(nw_category_twomode, "bipartite"))
+        a <- 1:(network::get.network.attribute(network, "bipartite"))
         a <- a + 1 # the census-functions of sna add an Agg-count in the first count, so we need a + 1
         fourcycles <- tibble::as_tibble(sna::kcycle.census(network, maxlen = 4)$cycle.count[3,][a])
         qca_data %>% tibble::add_column(Fourcycles = fourcycles$value, .after = "Cases")
       } else
         if (count == "Threepaths") {
-          a <- 1:(network::get.network.attribute(nw_category_twomode, "bipartite"))
+          a <- 1:(network::get.network.attribute(network, "bipartite"))
           a <- a + 1
           threepath <- tibble::as_tibble(sna::kpath.census(network, maxlen = 3)$path.count[3,][a])
           qca_data %>% tibble::add_column(Threepaths = threepath$value, .after = "Cases")

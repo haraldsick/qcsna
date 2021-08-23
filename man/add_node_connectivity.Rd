@@ -33,7 +33,7 @@ you want to examine. This function adds a new column to your QCA-dataset with th
 and/or fourcycles that the individual cases/nodes are a member of.
 }
 \examples{
-qca_data <- add_node_connectivity(qca_data, network, count = "Fourcycles", "b2")
+\dontrun{qca_data <- add_node_connectivity(qca_data, network, count = "Fourcycles", "b2")}
 
 }
 \references{

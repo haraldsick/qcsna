@@ -10,6 +10,9 @@
 #' outcome are on. If they are on the first level (sometimes referred as the
 #' actor level) of a bipartite network, choose 'b1', if they are on the second level
 #' (sometimes referred as the event level), choose 'b2'. Otherwise omit it.
+#' @param ... Additional parameters for the SNA node-level indice, like e.g. 'cmode = "indegree"', if you would
+#' like to add only the indegree-counts. Please take a peek at the SNA package for further guidance and possible
+#' options for the node-level indices.
 #'
 #'
 #' @details With the add_node_indice function you can add the specific node-level metrics
@@ -33,12 +36,13 @@
 #' @importFrom sna stresscent
 #' @importFrom sna graphcent
 #' @importFrom sna evcent
+#' @importFrom rlang :=
 #' @importFrom tibble add_column
 #'
 #' @return The preexisting qca-dataset enhanced with a new column consisting of the
 #' specified sna node-level indice.
 #'
-#' @examples qca_data <- add_node_indice(network, qca_data, indice = degree, cmode = "indegree", "b2")
+#' @examples \dontrun{qca_data <- add_node_indice(network, qca_data, indice = degree, cmode = "indegree", "b2")}
 #'
 #' @references
 #'

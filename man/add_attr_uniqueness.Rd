@@ -32,7 +32,8 @@ and whether this uniqueness might be a necessary and/or sufficient condition for
 You can add a simple uniqueness-metric for a selected node-level attribute of your cases with this function.
 }
 \examples{
-qca_data <- add_attr_uniqueness(network, qca_data, "Type", bipartite = "b2")
+\dontrun{qca_data <- add_attr_uniqueness(network, qca_data, attr = "Type", bipartite = "b2")}
+
 }
 \references{
 Butts, Carter T. (2008). network: a Package for Managing Relational Data in R. Journal of Statistical Software, 24(2).
