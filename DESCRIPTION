@@ -2,7 +2,7 @@ Package: qcsna
 Type: Package
 Title: Qualitative Comparative Social Network Analysis
 Version: 0.1.0
-Author: person("Harald", "Sick", email = "sickharald@posteo.de", role = c("cre", "aut"))
+Author: person(given = "Harald", family = "Sick", email = "sickharald@posteo.de", role = c("cre", "aut"))
 Maintainer: Harald Sick <sickharald@posteo.de>
 Description: The qcsna package is a tool that helps you to analyze a network through qualitative comparative analysis. If you would like to know, for example, which network-based conditions (like e.g. node-level indices or node connections) are necessary and/or sufficient for a specific node attribute, this package helps you to build a bridge between descriptive social network analysis and QCA.
 License: GPL-3

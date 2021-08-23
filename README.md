@@ -1,1 +1,24 @@
-# qcsna
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# Qualitative Comparative Network Analysis with the qcsna package
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The `qcsna` package is a tool that helps you to analyze a network
+through qualitative comparative analysis. If you would like to know, for
+example, which network-based conditions (like e.g. node-level indices or
+node connections) are necessary and/or sufficient for a specific outcome
+(e.g. node attribute), this package helps you to build a bridge between
+descriptive social network analysis and QCA.
+
+## Installation
+
+You can install the development version of `qcsna` from
+[GitHub](https://github.com/haraldsick/qcsna) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("haraldsick/qcsna")
+```
