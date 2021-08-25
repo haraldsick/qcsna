@@ -3,14 +3,23 @@
 \docType{import}
 \name{reexports}
 \alias{reexports}
+\alias{betweenness}
+\alias{closeness}
 \alias{degree}
+\alias{stresscent}
+\alias{graphcent}
+\alias{evcent}
 \title{Objects exported from other packages}
+\references{
+Butts, Carter T. (2020). sna: Tools for Social Network Analysis. R package
+version 2.6. \url{https://CRAN.R-project.org/package=sna}.
+}
 \keyword{internal}
 \description{
 These objects are imported from other packages. Follow the links
 below to see their documentation.
 
 \describe{
-  \item{sna}{\code{\link[sna]{degree}}}
+  \item{sna}{\code{\link[sna]{betweenness}}, \code{\link[sna]{closeness}}, \code{\link[sna]{degree}}, \code{\link[sna]{evcent}}, \code{\link[sna]{graphcent}}, \code{\link[sna]{stresscent}}}
 }}
 
