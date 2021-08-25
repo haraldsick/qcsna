@@ -31,6 +31,9 @@
 #'
 #' @references Dusa, Adrian (2019). QCA with R. A Comprehensive Resource. Springer International Publishing.
 #'
+#' Butts, Carter T. (2008). network: a Package for Managing Relational Data in R. Journal of Statistical Software, 24(2).
+#' \url{https://www.jstatsoft.org/v24/i02/paper}.
+#'
 #' @export
 
 
