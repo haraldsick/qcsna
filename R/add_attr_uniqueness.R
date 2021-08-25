@@ -31,6 +31,9 @@
 #' @references Butts, Carter T. (2008). network: a Package for Managing Relational Data in R. Journal of Statistical Software, 24(2).
 #' \url{https://www.jstatsoft.org/v24/i02/paper}.
 #'
+#' Kirill Müller and Hadley Wickham (2021). tibble: Simple Data Frames. R package
+#' version 3.1.4. https://CRAN.R-project.org/package=tibble
+#'
 #' @examples \dontrun{qca_data <- add_attr_uniqueness(network, qca_data, attr = "Type", bipartite = "b2")}
 #'
 #' @export
