@@ -1,6 +1,6 @@
 #' @title add_node_indice
 #'
-#' @description Adds a SNA node-level indice to the QCA data-set
+#' @description Adds a SNA node-level indice to the QCA data-set.
 #'
 #' @param network An object of class 'network'.
 #' @param qca_data The QCA-dataset you want to extend.
@@ -53,7 +53,7 @@
 #' version 2.6. \url{https://CRAN.R-project.org/package=sna}.
 #'
 #' Kirill Müller and Hadley Wickham (2021). tibble: Simple Data Frames. R package
-#' version 3.1.4. https://CRAN.R-project.org/package=tibble
+#' version 3.1.4. \url{https://CRAN.R-project.org/package=tibble}.
 #'
 #' @export
 

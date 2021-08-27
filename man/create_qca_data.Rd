@@ -39,5 +39,11 @@ the QCA-data-tibble can be finalized/converted with the finalize_qca_data-functi
 
 }
 \references{
+Butts, Carter T. (2008). network: a Package for Managing Relational Data in R. Journal of Statistical Software, 24(2).
+\url{https://www.jstatsoft.org/v24/i02/paper}.
+
 Dusa, Adrian (2019). QCA with R. A Comprehensive Resource. Springer International Publishing.
+
+Kirill Müller and Hadley Wickham (2021). tibble: Simple Data Frames. R package
+version 3.1.4. \url{https://CRAN.R-project.org/package=tibble}.
 }

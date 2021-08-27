@@ -37,7 +37,7 @@
 #' Dusa, Adrian (2019). QCA with R. A Comprehensive Resource. Springer International Publishing.
 #'
 #' Kirill Müller and Hadley Wickham (2021). tibble: Simple Data Frames. R package
-#' version 3.1.4. https://CRAN.R-project.org/package=tibble
+#' version 3.1.4. \url{https://CRAN.R-project.org/package=tibble}.
 #'
 #' @export
 

@@ -42,4 +42,7 @@ Butts, Carter T. (2008). network: a Package for Managing Relational Data in R. J
 
 Butts, Carter T. (2020). sna: Tools for Social Network Analysis. R package
 version 2.6. \url{https://CRAN.R-project.org/package=sna}.
+
+Kirill Müller and Hadley Wickham (2021). tibble: Simple Data Frames. R package
+version 3.1.4. \url{https://CRAN.R-project.org/package=tibble}.
 }

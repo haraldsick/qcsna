@@ -21,7 +21,7 @@
 #' CO2 emissions of cars in the EU. Manuscript submitted for publication.
 #'
 #' @examples
-#' qca_data <- create_qca_data(vehicle_categories_dn, attr_cases = "vertex.names", attr_outcome = "Type", bipartite = "b2")
+#' \dontrun{qca_data <- create_qca_data(vehicle_categories_dn, attr_cases = "vertex.names", attr_outcome = "Type", bipartite = "b2")
 #' qca_data <- add_node_indice(vehicle_categories_dn, qca_data, indice = degree, cmode = "indegree", "b2")
-#' qca_data
+#' qca_data}
 "vehicle_categories_dn"

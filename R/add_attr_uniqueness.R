@@ -32,7 +32,7 @@
 #' \url{https://www.jstatsoft.org/v24/i02/paper}.
 #'
 #' Kirill Müller and Hadley Wickham (2021). tibble: Simple Data Frames. R package
-#' version 3.1.4. https://CRAN.R-project.org/package=tibble
+#' version 3.1.4. \url{https://CRAN.R-project.org/package=tibble}.
 #'
 #' @examples \dontrun{qca_data <- add_attr_uniqueness(network, qca_data, attr = "Type", bipartite = "b2")}
 #'
