@@ -1,5 +1,8 @@
 ---
+author: "Harald Sick"
+date: 11.11.11
 output: github_document
+bibliography: bibfile.bib
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -8,18 +11,19 @@ output: github_document
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
+  #echo = TRUE,
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
 ```
 
-# Qualitative Comparative Network Analysis with the qcsna package
+# Qualitative Comparative Social Network Analysis with the `qcsna` package
 
 <!-- badges: start -->
 
 <!-- badges: end -->
 
-The `qcsna` package is a tool that helps you to analyze a network through qualitative comparative analysis. If you would like to know, for example, which network-based conditions (like e.g. node-level indices or node connections) are necessary and/or sufficient for a specific outcome (e.g. node attribute), this package helps you to build a bridge between descriptive social network analysis and QCA.
+The `qcsna` package is a tool that helps you to analyze a network through qualitative comparative analysis (QCA) [@Ragin1987; @Ragin2000]. The network structure as a whole is not to be explained, but rather the node level, more precisely nodal behavior, for example their interaction with other nodes through edge formation, or node attributes. Network structures in which the nodes of interest are integrated serve as explanatory variables, or — to use the QCA terminology — as conditions. If you would like to know, for example, which network-based conditions (like e.g., node-level indices or node connections) are necessary and/or sufficient for a specific outcome (e.g., node attributes), this package helps you to build a bridge between descriptive social network analysis and QCA.
 
 ## Installation
 
@@ -28,4 +32,23 @@ You can install the development version of `qcsna` from [GitHub](https://github.
 ``` r
 # install.packages("devtools")
 devtools::install_github("haraldsick/qcsna")
+library(qcsna)
 ```
+
+## Network data
+
+The `qcsna` package works with `network` objects [@Butts2008a; @Butts2015], the format also `statnet` [@Handcock2008] uses to store network data, and supports one-mode and two-mode networks.
+
+For demonstration purposes, I have included a dataset from another study.
+
+-- if i-graph-data (intergraph)?
+
+Internal Dataset
+
+## Creating the QCA dataset
+
+## Specifying conditions
+
+## Finalizing the dataset to process it with QCA packages
+
+## References
